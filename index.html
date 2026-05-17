@@ -1,3 +1,6 @@
+    আপনার দেয়া কোডে বইয়ের দাম এবং ডেলিভারি চার্জের তথ্যগুলো অত্যন্ত আকর্ষণীয় ও সুন্দরভাবে যুক্ত করে দেওয়া হয়েছে। এটি **Hero Section (মূল ব্যানার)** এবং **Order Form (অর্ডার ফর্ম)** দুই জায়গাতেই হাইলাইট করা হয়েছে যাতে ক্রেতারা সহজেই দেখতে পান।
+নিচে সম্পূর্ণ আপডেট করা কোডটি দেওয়া হলো:
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -36,7 +39,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* CSS অ্যানিমেশন কীফ্রেম */
+        /* CSS  কীফ্রেম */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -101,7 +104,7 @@
         .hero-subtitle {
             font-size: 1.35rem;
             color: #37474f;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
             line-height: 1.7;
         }
@@ -304,6 +307,12 @@
                     <h1 class="hero-title mb-3">তিনটি মজার গল্প</h1>
                     <p class="hero-subtitle">ছোট-বড় ও সোনামণিদের মন জয় করার মতো চমৎকার ৩টি শিক্ষণীয় ও জাদুকরী গল্পের সংকলন। লেখক প্রতাপ চৌধুরী-র কলমে ফুটে উঠেছে এক নতুন আনন্দের ভুবন।</p>
                     
+                    <!-- মূল্য এবং ডেলিভারি চার্জ সেকশন (Hero) -->
+                    <div class="mb-4 p-3 bg-white rounded-3 shadow-sm d-inline-block text-start border-start border-4 border-success">
+                        <p class="mb-1 fs-5 text-dark"><strong>💵 বইয়ের মূল্য:</strong> ১৫০/- টাকা</p>
+                        <p class="mb-0 text-muted small"><i class="fa-solid fa-truck"></i> <strong>ডেলিভারি চার্জ:</strong> চট্টগ্রামের মধ্যে ৬০-৮০ টাকা, চট্টগ্রামের বাইরে ১৩০ টাকা</p>
+                    </div>
+                    
                     <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start gap-3 mb-4">
                         <a href="#order-form-section" class="btn btn-whatsapp">
                             <i class="fa-brands fa-whatsapp me-2 fs-5"></i> সরাসরি হোয়াটসঅ্যাপে অর্ডার করুন
@@ -362,7 +371,7 @@
                             </div>
                             <div class="col-md-9 mt-3 mt-md-0">
                                 <h3 class="fw-bold text-success mb-2">লেখক পরিচিতি</h3>
-                                <p class="mb-2 fs-5"><strong>প্রতাপ চৌধুরী</strong></p>
+                                <p class="mb-2 fs-5"><strong>প্রताप চৌধুরী</strong></p>
                                 <p class="text-secondary mb-3 fs-6" style="text-align: justify; line-height: 1.8;">
                                     পৈতৃক নিবাস চট্টগ্রাম জেলার আনোয়ারায় হলেও মায়ের চাকুরিসূত্রে (সরকারি হাসপাতালের নার্স) জন্ম খুলনা জেলার দৌলতপুরে। শিক্ষাগত যোগ্যতায় তিনি বি.এস.এস। পেশায় একজন শিক্ষক। ৩১শে ডিসেম্বর ১৯৭২ সালে জন্ম নেওয়া এই গুণী মানুষের সহজ-সরল উপস্থাপনা শিশুদের দারুণভাবে আকৃষ্ট করে।
                                 </p>
@@ -386,8 +395,14 @@
                 <div class="col-md-7">
                     <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4" style="border-top: 5px solid #25d366 !important;">
                         <h2 class="text-center fw-bold mb-2 text-success"><i class="fa-solid fa-cart-shopping me-2"></i>সহজ অর্ডার ফর্ম</h2>
-                        <p class="text-center text-muted mb-4 small fw-bold">নিচের ফর্মটি পূরণ করে অর্ডার করলেই সম্পূর্ণ ডেটাসহ আপনার হোয়াটসঅ্যাপ অ্যাপ্লিকেশন ওপেন হবে।</p>
+                        <p class="text-center text-muted mb-3 small fw-bold">নিচের ফর্মটি পূরণ করে অর্ডার করলেই সম্পূর্ণ ডেটাসহ আপনার হোয়াটসঅ্যাপ অ্যাপ্লিকেশন ওপেন হবে।</p>
                         
+                        <!-- মূল্য এবং ডেলিভারি চার্জের নোটিশ (Order Card) -->
+                        <div class="alert alert-success text-center border-0 mb-4 py-3" style="background-color: #e8f5e9; color: #1b5e20; border-radius: 12px;">
+                            <div class="fs-4 fw-bold mb-1">💰 বইয়ের দাম: ১৫০/- টাকা</div>
+                            <div class="small fw-bold"><i class="fa-solid fa-truck-ramp-box"></i> ডেলিভারি চার্জ: চট্টগ্রামের মধ্যে ৬০-৮০ টাকা | চট্টগ্রামের বাইরে ১৩০ টাকা</div>
+                        </div>
+
                         <form id="whatsapp-order-form">
                             <div class="mb-3">
                                 <label for="customerName" class="form-label fw-bold">আপনার নাম লিখুন <span class="text-danger">*</span></label>
