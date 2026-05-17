@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তিনটি মজার গল্প - প্রতাপ চৌধুরী</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Hind+Siliguri:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --accent-green: #4caf50;
+            --light-bg: #f1f8e9;
+            --dark-text: #1b5e20;
+            --card-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+        }
+
+        /* বুক কার্সার ইফেক্ট */
+        body, html, a, button, select, input, textarea {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>📖</text></svg>"), auto !important;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Baloo Da 2', sans-serif;
+            font-weight: 700; /* সব সাধারণ বাংলা লেখাকে সুন্দর মোটা করার জন্য ৭০০ ফন্ট-ওয়েট */
+            background-color: #fafdf6;
+            color: #222;
+            overflow-x: hidden;
+            letter-spacing: 0.2px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* CSS অ্যানিমেশন কীফ্রেম */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes floatEffect {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* স্ক্রল অ্যানিমেশন ক্লাস */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 80px 0 60px 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            position: relative;
+        }
+
+        .hero-section .col-md-7 {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero-title {
+            color: var(--dark-text);
+            font-weight: 800; /* টাইটেল সর্বোচ্চ মোটা */
+            font-size: 2.8rem;
+            line-height: 1.4;
+            font-family: 'Baloo Da 2', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: #37474f;
+            margin-bottom: 25px;
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        .book-img-container {
+            position: relative;
+            text-align: center;
+            animation: fadeInRight 1.2s ease-out forwards, floatEffect 4s ease-in-out infinite;
+        }
+
+        /* Real Book Effect */
+        .book-cover-real {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px 16px 16px 8px;
+            box-shadow: 5px 15px 35px rgba(0,0,0,0.25), 
+                        -2px 0px 5px rgba(0,0,0,0.1);
+            border-left: 5px solid #1c5222;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .book-img-container:hover .book-cover-real {
+            transform: scale(1.06) rotate(-3deg) !important;
+            box-shadow: 8px 25px 45px rgba(0,0,0,0.35);
+        }
+
+        /* Feature Cards */
+        .story-card {
+            background: #ffffff;
+            border: 2px solid #e8f5e9;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+        }
+
+        .story-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--accent-green);
+            box-shadow: 0 15px 30px rgba(46, 125, 50, 0.25);
+        }
+
+        .story-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-bg);
+            color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px auto;
+            transition: transform 0.5s ease;
+        }
+
+        .story-card:hover .story-icon {
+            transform: rotateY(360deg);
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* Order Button Effect */
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 800;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd58;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Author Section */
+        .author-section {
+            background-color: #ffffff;
+            border-radius: 30px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+            transition: transform 0.4s ease;
+        }
+        
+        .author-section:hover {
+            transform: scale(1.01);
+        }
+
+        .author-img {
+            width: 160px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 4px solid var(--light-bg);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15);
+            transition: transform 0.4s ease, rotate 0.4s ease;
+        }
+
+        .author-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* Form Customization */
+        .form-control, .form-select {
+            border: 2px solid #c0c0c0;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700; /* ইনপুট টেক্সটও মোটা দেখাবে */
+            transition: all 0.3s ease;
+            color: #111;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+            transform: scale(1.01);
+        }
+
+        .form-label {
+            font-weight: 700 !important;
+            color: #222;
+        }
+
+        .section-title {
+            color: var(--dark-text);
+            font-weight: 800;
+            font-size: 2.2rem;
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Baloo Da 2', sans-serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        /* Utility Classes ফিক্স */
+        .fw-bold {
+            font-weight: 700 !important;
+        }
+        .text-muted {
+            color: #4b5563 !important; /* টেক্সট কালার একটু গাঢ় করা হয়েছে যাতে মোটা ফন্ট স্পষ্ট পড়া যায় */
+        }
+        .text-secondary {
+            color: #374151 !important;
+        }
+
+        /* Mobile Friendly Responsiveness */
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 40px 0 40px 0;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .book-cover-real {
+                max-width: 240px;
+                margin-top: 30px;
+            }
+            .author-section {
+                text-align: center;
+                padding: 25px;
+            }
+            .author-img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start">
+                    <span class="badge bg-success mb-3 px-3 py-2 rounded-pill fs-6 fw-bold">নতুন শিশুতোষ বই 🎉</span>
+                    <h1 class="hero-title mb-3">তিনটি মজার গল্প</h1>
+                    <p class="hero-subtitle">ছোট-বড় ও সোনামণিদের মন জয় করার মতো চমৎকার ৩টি শিক্ষণীয় ও জাদুকরী গল্পের সংকলন। লেখক প্রতাপ চৌধুরী-র কলমে ফুটে উঠেছে এক নতুন আনন্দের ভুবন।</p>
+                    
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start gap-3 mb-4">
+                        <a href="#order-form-section" class="btn btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i> সরাসরি হোয়াটসঅ্যাপে অর্ডার করুন
+                        </a>
+                        <a href="#about-book" class="btn btn-light border rounded-pill px-4 py-3 fw-bold text-secondary">বইয়ের বিস্তারিত জানুন</a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="book-img-container">
+                        <img src="Book-Cover.jpg" alt="তিনটি মজার গল্প - বইয়ের প্রচ্ছদ" class="book-cover-real">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-book" class="py-5 mt-5 reveal-on-scroll">
+        <div class="container">
+            <h2 class="section-title">বইয়ের ভেতরের গল্পসমূহ</h2>
+            <p class="text-center text-muted mb-5 fs-5 fw-bold">এই বইটিতে রয়েছে ৩টি আকর্ষণীয় ও ভিন্ন স্বাদের গল্প যা শিশুদের নৈতিকতা ও বুদ্ধিমত্তা বিকাশ করবে।</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-icon"><i class="fa-solid fa-dove"></i></div>
+                        <h4 class="fw-bold mb-3 text-success">রিতার কবুতর</h4>
+                        <p class="text-secondary fs-6">একটি মায়াবী পাখি আর ছোট্ট রিতার সুন্দর বন্ধুত্বের গল্প, যা শিশুদের পশুপাখির প্রতি দয়াশীল হতে শেখাবে।</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h4 class="fw-bold mb-3 text-success">বাবলুর বিচার</h4>
+                        <p class="text-secondary fs-6">দুষ্টু বাবলুর মজার কাণ্ডকারখানা এবং বুদ্ধিমত্তার সাথে সত্যকে খুঁজে বের করার চমৎকার এক সামাজিক গল্প।</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-icon"><i class="fa-solid fa-shapes"></i></div>
+                        <h4 class="fw-bold mb-3 text-success">ববির পুতুল</h4>
+                        <p class="text-secondary fs-6">পুতুল খেলার ছলে ক্লাসরুমের আনন্দঘন পরিবেশ এবং ছোটদের স্বপ্ন পূরণের একটি মিষ্টি গল্প।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light reveal-on-scroll">
+        <div class="container">
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="author-section">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center">
+                                <img src="লেখক-পরিচিতি.jpg" alt="লেখক প্রতাপ চৌধুরী" class="author-img">
+                            </div>
+                            <div class="col-md-9 mt-3 mt-md-0">
+                                <h3 class="fw-bold text-success mb-2">লেখক পরিচিতি</h3>
+                                <p class="mb-2 fs-5"><strong>প্রতাপ চৌধুরী</strong></p>
+                                <p class="text-secondary mb-3 fs-6" style="text-align: justify; line-height: 1.8;">
+                                    পৈতৃক নিবাস চট্টগ্রাম জেলার আনোয়ারায় হলেও মায়ের চাকুরিসূত্রে (সরকারি হাসপাতালের নার্স) জন্ম খুলনা জেলার দৌলতপুরে। শিক্ষাগত যোগ্যতায় তিনি বি.এস.এস। পেশায় একজন শিক্ষক। ৩১শে ডিসেম্বর ১৯৭২ সালে জন্ম নেওয়া এই গুণী মানুষের সহজ-সরল উপস্থাপনা শিশুদের দারুণভাবে আকৃষ্ট করে।
+                                </p>
+                                <div class="p-3 bg-light rounded border-start border-4 border-success">
+                                    <p class="mb-0 text-muted fs-6">
+                                        <i class="fa-solid fa-quote-left me-2 text-success"></i>
+                                        "আমার বিশ্বাস গল্পগুলো আপনার ও আপনার পরিবারের ছোট-বড় সকলের মন জয় করে নেবে। মনের অজান্তে যদি কোনো ভুল-ত্রুটি থেকে থাকে, তা ক্ষমা সুন্দর দৃষ্টিতে দেখার অনুরোধ রইল।" - <em>লেখক</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order-form-section" class="py-5 mt-4 reveal-on-scroll">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4" style="border-top: 5px solid #25d366 !important;">
+                        <h2 class="text-center fw-bold mb-2 text-success"><i class="fa-solid fa-cart-shopping me-2"></i>সহজ অর্ডার ফর্ম</h2>
+                        <p class="text-center text-muted mb-4 small fw-bold">নিচের ফর্মটি পূরণ করে অর্ডার করলেই সম্পূর্ণ ডেটাসহ আপনার হোয়াটসঅ্যাপ অ্যাপ্লিকেশন ওপেন হবে।</p>
+                        
+                        <form id="whatsapp-order-form">
+                            <div class="mb-3">
+                                <label for="customerName" class="form-label fw-bold">আপনার নাম লিখুন <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="customerName" placeholder="যেমন: মোহাম্মদ ওয়াহিদ" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="customerPhone" class="form-label fw-bold">মোবাইল নম্বর <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="customerPhone" placeholder="যেমন: 017XXXXXXXX" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="bookQty" class="form-label fw-bold">বইয়ের সংখ্যা (পরিমাণ)</label>
+                                <select class="form-select" id="bookQty">
+                                    <option value="১ টি">১ টি (1 Copy)</option>
+                                    <option value="২ টি">২ টি (2 Copies)</option>
+                                    <option value="৩ টি">৩ টি (3 Copies)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="customerAddress" class="form-label fw-bold">পূর্ণাঙ্গ ডেলিভারি ঠিকানা <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="customerAddress" rows="3" placeholder="গ্রাম/রোড, থানা, জেলা" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-whatsapp w-100 py-3 rounded-3 fw-bold">
+                                <i class="fa-brands fa-whatsapp me-2 fs-5"></i> অর্ডার সম্পন্ন করুন (WhatsApp)
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-success text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-1 fw-bold">© 2026 তিনটি মজার গল্প -  All rights reserved.<br> <a style="color: #BC2023; font-weight: bold;" href="https://freelancerwahid.github.io">Design & Developed By Wahid</a> </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // স্ক্রল অ্যানিমেশন স্ক্রিপ্ট
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal-on-scroll");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+
+        // হোয়াটসঅ্যাপ ফর্ম সাবমিশন
+        document.getElementById('whatsapp-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const qty = document.getElementById('bookQty').value;
+            const address = document.getElementById('customerAddress').value;
+            
+            const whatsappNumber = "8801823731573"; 
+            
+            const message = "🌟 *নতুন বইয়ের অনলাইন অর্ডার* 🌟\n\n" +
+                            "📖 *বইয়ের নাম:* তিনটি মজার গল্প\n" +
+                            "👤 *গ্রাহকের নাম:* " + name + "\n" +
+                            "📞 *মোবাইল নম্বর:* " + phone + "\n" +
+                            "🛍️ *পরিমাণ:* " + qty + "\n" +
+                            "📍 *ডেলিভারি ঠিকানা:* " + address + "\n\n" +
+                            "🚀 _অনুগ্রহ করে অর্ডারটি দ্রুত প্রসেস করুন।_";
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodedMessage;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
