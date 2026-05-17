@@ -36,7 +36,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* CSS  কীফ্রেম */
+        /* CSS অ্যানিমেশন কীফ্রেম */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -304,10 +304,10 @@
                     <h1 class="hero-title mb-3">তিনটি মজার গল্প</h1>
                     <p class="hero-subtitle">ছোট-বড় ও সোনামণিদের মন জয় করার মতো চমৎকার ৩টি শিক্ষণীয় ও জাদুকরী গল্পের সংকলন। লেখক প্রতাপ চৌধুরী-র কলমে ফুটে উঠেছে এক নতুন আনন্দের ভুবন।</p>
                     
-                    <!-- মূল্য এবং েলিভারি চার্জ সেকশন (Hero) -->
+                    <!-- মূল্য এবং ডেলিভারি চার্জ সেকশন (Hero) -->
                     <div class="mb-4 p-3 bg-white rounded-3 shadow-sm d-inline-block text-start border-start border-4 border-success">
                         <p class="mb-1 fs-5 text-dark"><strong>💵 বইয়ের মূল্য:</strong> ১৫০/- টাকা</p>
-                        <p class="mb-0 text-muted small"><i class="fa-solid fa-truck"></i> <strong>ডেলিভারি চার্জ:</strong> চট্টগ্রামের মধ্যে ৬০-৮০ টাকা, চট্টগ্রামের বাইরে ১৩০ টাকা</p>
+                <p class="mb-0 text-muted small"><i class="fa-solid fa-truck"></i> <strong>ডেলিভারি চার্জ:</strong> চট্টগ্রামের মধ্যে ৭০ টাকা, চট্টগ্রামের বাইরে ১৩০ টাকা</p>
                     </div>
                     
                     <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start gap-3 mb-4">
@@ -368,7 +368,7 @@
                             </div>
                             <div class="col-md-9 mt-3 mt-md-0">
                                 <h3 class="fw-bold text-success mb-2">লেখক পরিচিতি</h3>
-                                <p class="mb-2 fs-5"><strong>প্রताप চৌধুরী</strong></p>
+                                <p class="mb-2 fs-5"><strong>প্রতাপ চৌধুরী</strong></p>
                                 <p class="text-secondary mb-3 fs-6" style="text-align: justify; line-height: 1.8;">
                                     পৈতৃক নিবাস চট্টগ্রাম জেলার আনোয়ারায় হলেও মায়ের চাকুরিসূত্রে (সরকারি হাসপাতালের নার্স) জন্ম খুলনা জেলার দৌলতপুরে। শিক্ষাগত যোগ্যতায় তিনি বি.এস.এস। পেশায় একজন শিক্ষক। ৩১শে ডিসেম্বর ১৯৭২ সালে জন্ম নেওয়া এই গুণী মানুষের সহজ-সরল উপস্থাপনা শিশুদের দারুণভাবে আকৃষ্ট করে।
                                 </p>
@@ -392,12 +392,12 @@
                 <div class="col-md-7">
                     <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4" style="border-top: 5px solid #25d366 !important;">
                         <h2 class="text-center fw-bold mb-2 text-success"><i class="fa-solid fa-cart-shopping me-2"></i>সহজ অর্ডার ফর্ম</h2>
-                        <p class="text-center text-muted mb-3 small fw-bold">নিচের ফর্মটি পূরণ করে অর্ডার করলেই সম্পূর্ণ ডেটাসহ আপনার হোয়াটসঅ্যাপ অ্যাপ্লিকেশন ওপেন হবে।</p>
+                        <p class="text-center text-muted mb-4 small fw-bold">নিচের ফর্মটি পূরণ করে অর্ডার করলেই সম্পূর্ণ ডেটাসহ আপনার হোয়াটসঅ্যাপ অ্যাপ্লিকেশন ওপেন হবে।</p>
                         
                         <!-- মূল্য এবং ডেলিভারি চার্জের নোটিশ (Order Card) -->
                         <div class="alert alert-success text-center border-0 mb-4 py-3" style="background-color: #e8f5e9; color: #1b5e20; border-radius: 12px;">
                             <div class="fs-4 fw-bold mb-1">💰 বইয়ের দাম: ১৫০/- টাকা</div>
-                            <div class="small fw-bold"><i class="fa-solid fa-truck-ramp-box"></i> ডেলিভারি চার্জ: চট্টগ্রামের মধ্যে ৬০-৮০ টাকা | চট্টগ্রামের বাইরে ১৩০ টাকা</div>
+                            <div class="small fw-bold"><i class="fa-solid fa-truck-ramp-box"></i> ডেলিভারি চার্জ: চট্টগ্রামের মধ্যে ৭০ টাকা | চট্টগ্রামের বাইরে ১৩০ টাকা</div>
                         </div>
 
                         <form id="whatsapp-order-form">
@@ -414,15 +414,15 @@
                             <div class="mb-3">
                                 <label for="bookQty" class="form-label fw-bold">বইয়ের সংখ্যা (পরিমাণ)</label>
                                 <select class="form-select" id="bookQty">
-                                    <option value="১ টি">১ টি (1 Copy)</option>
-                                    <option value="২ টি">২ টি (2 Copies)</option>
-                                    <option value="৩ টি">৩ টি (3 Copies)</option>
+                                    <option value="1">১ টি (1 Copy)</option>
+                                    <option value="2">২ টি (2 Copies)</option>
+                                    <option value="3">৩ টি (3 Copies)</option>
                                 </select>
                             </div>
                             
                             <div class="mb-4">
                                 <label for="customerAddress" class="form-label fw-bold">পূর্ণাঙ্গ ডেলিভারি ঠিকানা <span class="text-danger">*</span></label>
-                                <textarea class="form-control" id="customerAddress" rows="3" placeholder="গ্রাম/রোড, থানা, জেলা" required></textarea>
+                                <textarea class="form-control" id="customerAddress" rows="3" placeholder="গ্রাম/রোড, থানা, জেলা (চট্টগ্রাম হলে উল্লেখ করুন)" required></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-whatsapp w-100 py-3 rounded-3 fw-bold">
@@ -467,16 +467,32 @@
             
             const name = document.getElementById('customerName').value;
             const phone = document.getElementById('customerPhone').value;
-            const qty = document.getElementById('bookQty').value;
+            const qty = parseInt(document.getElementById('bookQty').value);
             const address = document.getElementById('customerAddress').value;
             
             const whatsappNumber = "8801823731573"; 
+            
+            // বইয়ের দামের ডাইনামিক হিসাব (১টি বইয়ের দাম ১৫০ টাকা)
+            const bookPricePerCopy = 150;
+            const totalBookPrice = qty * bookPricePerCopy;
+            
+            // ঠিকানা চেক করে ডেলিভারি চার্জ এবং সর্বমোট প্রদেয় টাকা নির্ধারণ
+            let deliveryCharge = "১৩০ টাকা (চট্টগ্রামের বাইরে)";
+            let totalAmount = totalBookPrice + 130;
+            
+            if (address.includes("চট্টগ্রাম") || address.includes("চট্রগ্রাম") || address.toLowerCase().includes("chittagong") || address.includes("চাটগাঁ") || address.includes("চট্টগ্রামের") || address.includes("চট্রগ্রামের")) {
+                deliveryCharge = "৭০ টাকা (চট্টগ্রামের ভেতরে)";
+                totalAmount = totalBookPrice + 70;
+            }
             
             const message = "🌟 *নতুন বইয়ের অনলাইন অর্ডার* 🌟\n\n" +
                             "📖 *বইয়ের নাম:* তিনটি মজার গল্প\n" +
                             "👤 *গ্রাহকের নাম:* " + name + "\n" +
                             "📞 *মোবাইল নম্বর:* " + phone + "\n" +
-                            "🛍️ *পরিমাণ:* " + qty + "\n" +
+                            "🛍️ *পরিমাণ:* " + qty + " টি\n" +
+                            "💵 *বইয়ের মোট দাম:* " + totalBookPrice + "/- টাকা (" + qty + " x ১৫০)\n" +
+                            "📦 *ডেলিভারি চার্জ:* " + deliveryCharge + "\n" +
+                            "💰 *সর্বমোট প্রদেয়:* " + totalAmount + "/- টাকা\n" +
                             "📍 *ডেলিভারি ঠিকানা:* " + address + "\n\n" +
                             "🚀 _অনুগ্রহ করে অর্ডারটি দ্রুত প্রসেস করুন।_";
             
